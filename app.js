@@ -1747,8 +1747,11 @@ function resetProgress() {
 }
 
 startBtn.addEventListener("click", () => {
-  showScreen(studyScreen);
-  renderCard();
+    selectedCategory = "all";
+    currentIndex = 0;
+
+    showScreen(studyScreen);
+    renderCard();
 });
 
 backHomeBtn.addEventListener("click", () => {
