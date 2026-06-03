@@ -1,0 +1,232 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>世界史暗記サイト</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ホーム画面 -->
+    <section id="startScreen" class="screen">
+
+        <div class="hero">
+            <h1> 世界史暗記サイト</h1>
+            <p>関関同立・MARCH・共通テスト対策</p>
+        </div>
+
+        <div class="progress-card">
+
+            <h2>学習進捗</h2>
+
+            <div class="progress-bg">
+                <div id="homeProgressBar" class="progress-fill"></div>
+            </div>
+
+            <p id="homeProgressText">0 / 0問</p>
+            <h3 id="homePercent">0%</h3>
+
+        </div>
+        <div class="search-area">
+  <input id="searchInput" type="text" placeholder="問題を検索（例：ハンムラビ）">
+  <button id="searchBtn">検索</button>
+</div>
+
+<div id="searchResults"></div>
+<div class="category-area">
+  <label for="categorySelect">カテゴリー選択</label>
+
+  <select id="categorySelect">
+    <option value="all">全部</option>
+  </select>
+</div>
+
+        <div class="home-buttons">
+            <button id="startBtn">学習開始</button>
+            <button id="resetBtn">進捗リセット</button>
+            <button id="graduateBtn">🎓 卒業フォルダ</button>
+            <button id="randomBtn">🔀 ランダム出題</button>
+            <button id="weakFolderBtn">
+  ❌ 苦手フォルダ
+</button>
+</button>
+        </div>
+
+    </section>
+
+    <!-- 学習画面 -->
+    <section id="studyScreen" class="screen hidden">
+
+        <header>
+
+            <div id="categoryText">カテゴリー</div>
+
+            <div id="levelText">Lv.D</div>
+
+        </header>
+
+        <div class="progress-area">
+
+            <p id="progressText">問題 1 / 1</p>
+
+            <div class="progress-bg">
+                <div id="studyProgressBar" class="progress-fill"></div>
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <div id="cardNumber" class="card-number">
+                001
+            </div>
+
+            <h2 id="questionText">
+                問題が表示されます
+            </h2>
+
+            <div id="answerBox" class="answer-box hidden">
+
+                <h3>答え</h3>
+
+                <p id="answerText"></p>
+
+            </div>
+
+        </div>
+
+        <div class="button-group">
+
+            <button id="showAnswerBtn">
+                答えを見る
+            </button>
+
+            <button id="knownBtn">
+                覚えた！
+            </button>
+            <button id="weakBtn">
+    苦手！
+</button>
+            <button id="weakFolderBtn">
+  ❌ 苦手フォルダ
+</button>
+
+        </div>
+
+        <div class="button-group">
+
+            <button id="prevBtn">
+                ⬅ 前へ
+            </button>
+
+            <button id="nextBtn">
+                次へ ➡
+            </button>
+
+        </div>
+
+        <div class="memo-area">
+
+            <h3>📝 メモ</h3>
+
+            <textarea
+                id="memoInput"
+                placeholder="自由にメモを書こう"
+            ></textarea>
+
+        </div>
+
+        <div class="create-area">
+
+            <h3>➕ 自作問題追加</h3>
+
+            <input
+                id="newQuestion"
+                type="text"
+                placeholder="問題"
+            >
+
+            <input
+                id="newAnswer"
+                type="text"
+                placeholder="答え"
+            >
+            <input
+    id="newCategory"
+    type="text"
+    placeholder="カテゴリー（例：古代オリエント）"
+>
+
+            <button id="addCardBtn">
+                問題追加
+            </button>
+
+        </div>
+
+        <div class="home-back">
+
+            <button id="backHomeBtn">
+                ホームへ戻る
+            </button>
+
+        </div>
+
+    </section>
+
+    <section id="graduateScreen" class="screen hidden">
+
+  <div class="finish-card">
+    <h1>🎓 卒業フォルダ</h1>
+    <p>覚えた問題一覧</p>
+
+    <div id="graduateList"></div>
+
+    <button id="backFromGraduateBtn">
+      ホームへ戻る
+    </button>
+
+  </div>
+
+</section>
+    <!-- 全問制覇 -->
+     <section id="weakScreen" class="screen hidden">
+
+  <div class="finish-card">
+    <h1>❌ 苦手フォルダ</h1>
+    <p>間違えやすい問題一覧</p>
+
+    <div id="weakList"></div>
+
+    <button id="backFromWeakBtn">
+      ホームへ戻る
+    </button>
+  </div>
+
+</section>
+
+    <section id="finishScreen" class="screen hidden">
+
+        <div class="finish-card">
+
+            <h1>🎉 全問制覇！</h1>
+
+            <p>
+                お疲れさまでした！
+            </p>
+
+            <button id="finishResetBtn">
+                もう一度学習する
+            </button>
+
+        </div>
+
+    </section>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
+```
