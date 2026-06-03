@@ -1697,7 +1697,7 @@ function renderGraduateFolder() {
 }
 
 function renderCard() {
-  const list = activeCards();
+  const list = randomMode ? randomCards : activeCards();
 
   if (list.length === 0) {
     updateHome();
@@ -1709,7 +1709,7 @@ function renderCard() {
   if (currentIndex >= list.length) currentIndex = list.length - 1;
 
   const card = list[currentIndex];
-  const total = allCards().length;
+  const total = list.length;
   const known = knownIds.length;
   const percent = total ? Math.round((known / total) * 100) : 0;
 
